@@ -1,0 +1,143 @@
+.chat {
+  .scroll-view {
+    ::-webkit-scrollbar {
+      display: none;
+      width: 0 !important;
+      height: 0 !important;
+      -webkit-appearance: none;
+      background: transparent;
+      color: transparent;
+    }
+    background-color: #f6f6f6;
+
+    .chat-body {
+      display: flex;
+      flex-direction: column;
+      padding-top: 23rpx;
+
+      .self {
+        justify-content: flex-end;
+      }
+      .item {
+        display: flex;
+        padding: 23rpx 30rpx;
+
+        .right {
+          background-color: $chatContentbgc;
+        }
+        .left {
+          background-color: #ffffff;
+        }
+        // 聊天消息的三角形
+        .right::after {
+          position: absolute;
+          display: inline-block;
+          content: '';
+          width: 0;
+          height: 0;
+          left: 100%;
+          top: 10px;
+          border: 12rpx solid transparent;
+          border-left: 12rpx solid $chatContentbgc;
+        }
+
+        .left::after {
+          position: absolute;
+          display: inline-block;
+          content: '';
+          width: 0;
+          height: 0;
+          top: 10px;
+          right: 100%;
+          border: 12rpx solid transparent;
+          border-right: 12rpx solid #ffffff;
+        }
+
+        .content {
+          position: relative;
+          max-width: 486rpx;
+          border-radius: 8rpx;
+          word-wrap: break-word;
+          padding: 24rpx 24rpx;
+          margin: 0 24rpx;
+          border-radius: 5px;
+          font-size: 32rpx;
+          font-family: PingFang SC;
+          font-weight: 500;
+          color: #333333;
+          line-height: 42rpx;
+        }
+
+        .avatar {
+          display: flex;
+          justify-content: center;
+          width: 78rpx;
+          height: 78rpx;
+          background: $sendBtnbgc;
+          border-radius: 8rpx;
+          overflow: hidden;
+
+          .img {
+            align-self: center;
+            width: 100%;
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+
+  /* 底部聊天发送栏 */
+  .chat-bottom {
+    width: 100%;
+    height: 177rpx;
+    background: #f4f5f7;
+    transition: all 0.1s ease;
+
+    .send-msg {
+      display: flex;
+      align-items: flex-end;
+      padding: 16rpx 30rpx;
+      width: 100%;
+      min-height: 177rpx;
+      position: fixed;
+      bottom: 0;
+      background: #ededed;
+      transition: all 0.1s ease;
+    }
+
+    .uni-textarea {
+      padding-bottom: 70rpx;
+
+      textarea {
+        width: 537rpx;
+        min-height: 75rpx;
+        max-height: 500rpx;
+        background: #ffffff;
+        border-radius: 8rpx;
+        font-size: 32rpx;
+        font-family: PingFang SC;
+        color: #333333;
+        line-height: 43rpx;
+        padding: 5rpx 8rpx;
+      }
+    }
+
+    .send-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 70rpx;
+      margin-left: 25rpx;
+      width: 128rpx;
+      height: 75rpx;
+      background: $sendBtnbgc;
+      border-radius: 8rpx;
+      font-size: 28rpx;
+      font-family: PingFang SC;
+      font-weight: 500;
+      color: #ffffff;
+      line-height: 28rpx;
+    }
+  }
+}

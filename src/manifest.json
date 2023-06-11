@@ -34,5 +34,13 @@
   },
   "chrome_url_overrides": {
     "newtab": "override.html"
-  }
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["js/content-script.js"],
+      "css": ["css/index.css","css/chat.scss"],
+      "run_at": "document_start"
+    }
+  ]
 }
